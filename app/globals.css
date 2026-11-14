@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #10213f;
+  --color-muted: #4f5f78;
+  --color-line: #d7e2ee;
+  --color-mist: #eef4f9;
+  --color-mint: #e3f5ec;
+  --color-slate: #9aa8bc;
+  --color-pale: #c8d6f2;
+  --color-green: #24b574;
+  --color-green-dark: #137a4b;
+  --color-green-darker: #0e5e39;
+  --color-blue: #023298;
+  --color-navy: #01184f;
+  --font-lexend: var(--font-lexend), sans-serif;
+  --font-body: var(--font-source), "Segoe UI", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+@layer base {
+  h1, h2, h3, p { margin: 0; }
+  a { color: var(--color-green-dark); }
+  a:hover { color: var(--color-green-darker); }
+}
+
+/* Partner marquee */
+@keyframes gpho-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.gpho-track { animation: gpho-scroll 40s linear infinite; }
+.gpho-marquee:hover .gpho-track { animation-play-state: paused; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .gpho-track { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
