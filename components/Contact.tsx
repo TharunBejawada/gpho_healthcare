@@ -26,7 +26,7 @@ export default function Contact() {
           <div className="flex flex-col gap-[18px]">
             <div className="flex gap-[14px]"><ContactIcon name="pin" /><div><p className="font-lexend font-medium">Office</p><p className="text-muted">{ADDRESS}</p></div></div>
             <div className="flex gap-[14px]"><ContactIcon name="mail" /><div><p className="font-lexend font-medium">Email</p><p><a href={`mailto:${EMAIL}`} className="font-semibold">{EMAIL}</a></p></div></div>
-            <div className="flex gap-[14px]"><ContactIcon name="phone" /><div><p className="font-lexend font-medium">Phone</p><p className="text-muted">{PHONE}</p></div></div>
+            <div className="flex gap-[14px]"><ContactIcon name="phone" /><div><p className="font-lexend font-medium">Phone</p><p><a href={`tel:${PHONE.replace(/\s/g, "")}`} className="font-semibold">{PHONE}</a></p></div></div>
           </div>
         </Reveal>
         <Reveal delay={150} className="box-border flex-[1_1_460px] rounded-[18px] border border-line bg-white p-8">
