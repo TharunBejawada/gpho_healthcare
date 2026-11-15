@@ -9,7 +9,7 @@ export const NAV = [
 export const ADDRESS =
   "D.No. 3-4-809/1, First Floor, Near Bhaktapur Chaman, Kachiguda, Hyderabad – 500027";
 export const EMAIL = "purchase@gpho.com";
-export const PHONE = "[+91 00000 00000]";
+export const PHONE = "+91 97045 73311";
 
 export const PARTNER_LOGOS: { name: string; src?: string; w?: number; h?: number }[] = [
   { name: "Cipla", src: "/images/partners/cipla.png", w: 275, h: 77 },

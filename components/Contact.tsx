@@ -19,17 +19,17 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <div className="mx-auto flex max-w-[1200px] flex-wrap items-start gap-x-16 gap-y-12 px-6 py-[88px]">
+      <div className="mx-auto flex max-w-[1200px] flex-wrap items-start gap-x-16 gap-y-12 px-6 py-16 md:py-[88px]">
         <Reveal className="flex-[1_1_360px]">
-          <h2 className="font-lexend text-[40px] font-semibold leading-[1.6]">Get in touch</h2>
+          <h2 className="font-lexend text-[30px] font-semibold leading-[1.25] md:text-[40px] md:leading-[1.6]">Get in touch</h2>
           <p className="mb-7 mt-[14px] text-[18px] text-muted">Tell us about your facility and what you buy. We’ll show you where the group can save you money.</p>
           <div className="flex flex-col gap-[18px]">
             <div className="flex gap-[14px]"><ContactIcon name="pin" /><div><p className="font-lexend font-medium">Office</p><p className="text-muted">{ADDRESS}</p></div></div>
             <div className="flex gap-[14px]"><ContactIcon name="mail" /><div><p className="font-lexend font-medium">Email</p><p><a href={`mailto:${EMAIL}`} className="font-semibold">{EMAIL}</a></p></div></div>
-            <div className="flex gap-[14px]"><ContactIcon name="phone" /><div><p className="font-lexend font-medium">Phone</p><p className="text-muted">{PHONE}</p></div></div>
+            <div className="flex gap-[14px]"><ContactIcon name="phone" /><div><p className="font-lexend font-medium">Phone</p><p><a href={`tel:${PHONE.replace(/\s/g, "")}`} className="font-semibold">{PHONE}</a></p></div></div>
           </div>
         </Reveal>
-        <Reveal delay={150} className="box-border flex-[1_1_460px] rounded-[18px] border border-line bg-white p-8">
+        <Reveal delay={150} className="box-border flex-[1_1_460px] rounded-[18px] border border-line bg-white p-5 sm:p-8">
           {sent ? (
             <div role="status" className="py-10 text-center">
               <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-mint">
@@ -40,10 +40,10 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={onSubmit} className="flex flex-wrap gap-4">
-              <div className="flex-[1_1_200px]"><label htmlFor="r-name" className={label}>Your name</label><input id="r-name" name="name" type="text" required autoComplete="name" className={input} /></div>
-              <div className="flex-[1_1_200px]"><label htmlFor="r-org" className={label}>Organisation</label><input id="r-org" name="organisation" type="text" autoComplete="organization" className={input} /></div>
-              <div className="flex-[1_1_200px]"><label htmlFor="r-phone" className={label}>Phone</label><input id="r-phone" name="phone" type="tel" required autoComplete="tel" className={input} /></div>
-              <div className="flex-[1_1_200px]">
+              <div className="flex-[1_1_100%] sm:flex-[1_1_200px]"><label htmlFor="r-name" className={label}>Your name</label><input id="r-name" name="name" type="text" required autoComplete="name" className={input} /></div>
+              <div className="flex-[1_1_100%] sm:flex-[1_1_200px]"><label htmlFor="r-org" className={label}>Organisation</label><input id="r-org" name="organisation" type="text" autoComplete="organization" className={input} /></div>
+              <div className="flex-[1_1_100%] sm:flex-[1_1_200px]"><label htmlFor="r-phone" className={label}>Phone</label><input id="r-phone" name="phone" type="tel" required autoComplete="tel" className={input} /></div>
+              <div className="flex-[1_1_100%] sm:flex-[1_1_200px]">
                 <label htmlFor="r-type" className={label}>Interested in</label>
                 <select id="r-type" name="interest" className={`${input} bg-white`}>
                   <option>Surgicals</option><option>Injections</option><option>Oral drugs</option><option>Implants</option><option>Membership</option>
